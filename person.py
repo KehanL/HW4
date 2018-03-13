@@ -53,7 +53,7 @@ class Assistant(Staff):
     pass
 
 class Teller(Staff):
-	pass
+    pass
 
 class Manager(Staff):
     pass
