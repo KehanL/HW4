@@ -7,4 +7,18 @@
 class Person:
     pass
 
+class Customer(Person):
+    pass
+
+class Staff(Person):
+    pass
+
+class Assistant(Person):
+    pass
+
+class Manager(Person):
+    pass
+
+
+
 
