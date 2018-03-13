@@ -5,7 +5,7 @@
 
 
 import datetime
-# The Person class is the parent class of all the people
+    # The Person class is the parent class of all the people
 class Person:
 	
     #initialize the common attributors that can be inherited
@@ -27,13 +27,24 @@ class Person:
 
     	return age
 
+    # get email address of this person
     def get_email(self):
     	return ("The request email address is", emailadress)
 
 
-
+    # The Customer class will inherit attributors in Person class
 class Customer(Person):
-    pass
+
+    # 
+	def __init__(self, name, gender, emailadress, birthdate, phone, balance=0.0):
+		Person.__init__(self, name, gender, emailadress, birthdate, phone)
+		self.balance = balance
+
+    #
+	def 
+
+
+
 
 class Staff(Person):
     pass
@@ -41,9 +52,8 @@ class Staff(Person):
 class Assistant(Staff):
     pass
 
-class Manager(Person):
+class Teller(Staff):
     pass
 
-
-
-
+class Manager(Staff):
+    pass
