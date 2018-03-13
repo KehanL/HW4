@@ -38,7 +38,7 @@ class Customer(Person):
 class Staff(Person):
     pass
 
-class Assistant(Person):
+class Assistant(Staff):
     pass
 
 class Manager(Person):
