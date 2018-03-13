@@ -5,7 +5,9 @@
 
 # The Person class is the parent class of all the people
 class Person:
-    pass
+    
+    def __init__(self, name):
+        self.name = name
 
 class Customer(Person):
     pass
