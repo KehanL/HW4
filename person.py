@@ -9,7 +9,9 @@ import datetime
 class Person:
 
     #initialize the common attributors that can be inherited
-    def __init__(self, name, gender, email_address, birthdate, phone):
+    def __init__(self, name,
+                 gender, email_address,
+                 birthdate, phone):
         self.name = name 
         self.age = self.get_age()
         self.gender = gender
@@ -38,11 +40,24 @@ class Person:
 class Customer(Person):
 
     # 
-    def __init__(self, name, gender, email_address, birthdate, phone):
-        Person.__init__(self, name, gender, email_address, birthdate, phone)
+    def __init__(self, name,
+                 gender, email_address,
+                 birthdate, phone):
+        Person.__init__(self, name,
+                        gender, email_address,
+                        birthdate, phone)
+        self.account = []
 
-    #
-#    def create_account(self, balance_saving, balance_checking, account_number):
+    # This will call the request_new_account method of Manager whose variable/reference by default is default
+    def create_account(self, balance_saving,
+                       balance_checking, account_number,
+                       manager=default):
+        manager.request_new_account(self.name, balance_saving,
+                                    balance_checking, account_number)
+        self.account.append(manager.get_account(account_number))
+    
+    def __format__(self):
+        if 
 
 
 
@@ -57,7 +72,9 @@ class Teller(Staff):
     pass
 
 class Manager(Staff):
-    pass
+    def request_new_account(self, name,
+                            balance_saving, balance_checking,
+                            account_number):
 
 
 
