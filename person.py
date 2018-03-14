@@ -46,18 +46,52 @@ class Customer(Person):
         Person.__init__(self, name,
                         gender, email_address,
                         birthdate, phone)
-        self.account = []
+        # The account is a list containing the strings of the account number
+        # of every account the customer has
+        self.account = [] 
+        self.num_of_account = len(self.account)
+        # get last for digits of the account numbers
+        self.account_tails = [word[-4:] for word in self.account]
 
-    # This will call the request_new_account method of Manager whose variable/reference by default is default
+    # This will call the request_new_account method of Manager whose 
+    # variable/reference by default is default
     def create_account(self, balance_saving,
                        balance_checking, account_number,
                        manager=default):
         manager.request_new_account(self.name, balance_saving,
                                     balance_checking, account_number)
+        
         self.account.append(manager.get_account(account_number))
     
+    # This method returns a string containing the basic information of the customer
     def __format__(self):
-        if 
+        result = "Name: {} \nGender: {} \nEmail: {}\nBirthday: {}\nPhone: {}\n".format(
+            self.name, self.gender, self.email_address, self.birthdate, self.phone
+        )
+        result += "Accounts: {}\n".format(self.num_of_account)
+
+        # Loop through the account list and return all 
+        # the account number of the cutomer
+        # If the customer does not have any account yet, no account number returned
+        if self.num_of_account == 0:
+            return result
+        else:
+            for account_string in self.account:
+                result += "Account Number: XXXX-XXXX-XXXX-{}"\
+                .format(account_string[-4:]) + "\n"
+            return result
+
+    def get_account_balance_saving(self, account_tail):
+        if num_of_account == 0:
+            return None
+        else if account_tail not in 
+
+    # Return if the tail is in the name of any account
+    def 
+
+
+
+
 
 
 
