@@ -16,4 +16,6 @@ class Account():
         self.balance_saving = balance_saving
         self.balance_checking = balance_checking
         self.account_number = self.account_number
+
+    def new_account()
     
