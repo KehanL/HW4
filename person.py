@@ -49,6 +49,7 @@ class Customer(Person):
         # The account is a list containing the strings of the account number
         # of every account the customer has
         self.account = [] 
+        self.account_obj = []
         self.num_of_account = len(self.account)
         # get last for digits of the account numbers
         self.account_tails = [word[-4:] for word in self.account]
@@ -60,7 +61,7 @@ class Customer(Person):
                        manager=default):
         manager.request_new_account(self.name, balance_saving,
                                     balance_checking, account_number)
-        
+                                    
         self.account.append(manager.get_account(account_number))
     
     # This method returns a string containing the basic information of the customer
@@ -84,7 +85,13 @@ class Customer(Person):
     def get_account_balance_saving(self, account_tail):
         if num_of_account == 0:
             return None
-        else if account_tail not in 
+        else if account_tail not in self.account:
+            print("Wrong account information")
+            return None
+        else:
+            index = self.account_tails.find(account_tail)
+
+
 
     # Return if the tail is in the name of any account
     def 
