@@ -6,16 +6,18 @@ including ATM, bank accounts, etc.
 Todo:
 Account
 """
-
+account_all = []
 # storing account information
 class Account():
-    
     # initialize
     def __init__(self, name, balance_saving, balance_checking, account_number):
         self.name = name
         self.balance_saving = balance_saving
         self.balance_checking = balance_checking
         self.account_number = self.account_number
+        account_all.append()
 
     def new_account()
+
+
     
